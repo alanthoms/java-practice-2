@@ -16,7 +16,26 @@ public class StateCapitals {
         states.put("Arkansas", "Delaware");
 
         Set<String> keys = states.keySet();
-        
+
+        System.out.println("STATES");
+        for(String k : keys){
+            System.out.println(k);
+        }
+
+        System.out.println("CAPITALS");
+        for (String k : keys){
+            System.out.println(states.get(k));
+        }
+
+
+        System.out.println("BOTH");
+        for (String k : keys){
+            System.out.println(k + " - " + states.get(k));
+        }
+
+
+
+
 
 
     }
