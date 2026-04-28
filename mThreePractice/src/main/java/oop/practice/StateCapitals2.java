@@ -3,9 +3,7 @@ package oop.practice;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class StateCapitals2 {
@@ -22,6 +20,25 @@ public class StateCapitals2 {
         }
         System.out.println(states.size() + " STATES AND CAPITALS LOADED");
 
+        Set<String> keys = states.keySet();
+        System.out.println("HERE ARE THE STATES");
+        System.out.println(keys);
+
+        Random rng = new Random();
+        int randomStateNo = rng.nextInt(50);
+
+        List<String> stateList = new ArrayList<>(states.keySet());
+        String randomState = stateList.get(rng.nextInt(stateList.size()));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("WHATS THE CAPITAL OF " + randomState);
+        String capitalAnswer = sc.nextLine();
+
+        if(capitalAnswer.equalsIgnoreCase(states.get(randomState))){
+            System.out.println("nice work, you are right the correct answer is " + states.get(randomState));
+        } else{
+
+            System.out.println("INCORRECT the correct answer is " + states.get(randomState));
+        }
     }
 
 
