@@ -9,4 +9,5 @@ public class ClassRosterDaoException extends Exception {
         super(message, cause);
     }
 
+
 }
