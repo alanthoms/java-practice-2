@@ -85,6 +85,8 @@ public class ClassRosterView {
         io.print("=== Remove Student ===");
     }
 
+    public void displayRemoveSuccessBanner() {io.print("Student successfully removed.");}
+
     public void displayRemoveResult(Student studentRecord) {
         if(studentRecord != null){
             io.print("Student successfully removed.");
