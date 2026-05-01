@@ -1,5 +1,6 @@
 package com.sg.classroster.service;
 
+import com.sg.classroster.dao.ClassRosterPersistenceException;
 import com.sg.classroster.dto.Student;
 
 import java.util.List;
