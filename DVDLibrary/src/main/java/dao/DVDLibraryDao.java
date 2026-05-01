@@ -5,17 +5,14 @@ import dto.DVD;
 import java.util.List;
 
 public interface DVDLibraryDao {
-    DVD addDvd(String title, DVD dvd);
+    DVD addDvd(String title, DVD dvd) throws DVDLibraryDaoException;
 
-    DVD removeDvd(String title);
+    DVD removeDvd(String title) throws DVDLibraryDaoException;
 
-    DVD getDvd(String title);
+    DVD getDvd(String title) throws DVDLibraryDaoException;
 
-    List<DVD> getAllDvds();
+    List<DVD> getAllDvds() throws DVDLibraryDaoException;
 
-    DVD editDvd(String title, DVD updatedDvd);
+    DVD editDvd(String title) throws DVDLibraryDaoException;
 
-    void loadLibrary() throws Exception;
-
-    void saveLibrary() throws Exception;
 }
