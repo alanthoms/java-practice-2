@@ -98,9 +98,8 @@ public class DVDLibraryController {
     private void editDvd() throws DVDLibraryDaoException {
         view.displayDisplayAllBanner();
         String dvdChoice = view.getDVDChoice();
-        DVD editedDvd = dao.editDvd(dvdChoice);
-
-
+        DVD newChoice = view.getNewDvdInfo();
+        DVD editedDvd = dao.editDvd(dvdChoice, newChoice );
     }
 
     private void unknownCommand() {

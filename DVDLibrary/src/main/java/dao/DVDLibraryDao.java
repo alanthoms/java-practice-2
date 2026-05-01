@@ -13,6 +13,6 @@ public interface DVDLibraryDao {
 
     List<DVD> getAllDvds() throws DVDLibraryDaoException;
 
-    DVD editDvd(String title) throws DVDLibraryDaoException;
+    DVD editDvd(String title, DVD newDVD) throws DVDLibraryDaoException;
 
 }

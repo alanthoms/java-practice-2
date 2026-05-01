@@ -20,9 +20,9 @@ public class DVDLibraryView {
         io.print("3. View a DVD");
         io.print("4. Remove a DVD");
         io.print("5. Edit a DVD");
-        io.print("5. Exit");
+        io.print("6. Exit");
 
-        return io.readInt("Please select from the choices above." ,1,5);
+        return io.readInt("Please select from the choices above." ,1,6);
 
 
     }
@@ -80,6 +80,9 @@ public class DVDLibraryView {
     public String getDVDChoice() {
         return io.readString("Please enter the DVD Title.");
     }
+
+
+
 
     public void displayDvd (DVD dvd) {
         if (dvd != null) {

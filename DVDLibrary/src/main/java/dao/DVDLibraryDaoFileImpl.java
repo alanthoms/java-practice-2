@@ -45,10 +45,10 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
     }
 
     @Override
-    public DVD editDvd(String dvdTitle)
+    public DVD editDvd(String dvdTitle, DVD newDVD)
             throws DVDLibraryDaoException {
         loadRoster();
-        DVD removedDvd = dvds.remove(dvdTitle);
+        DVD removedDvd = dvds.put(dvdTitle, newDVD);
         writeRoster();
         return removedDvd;
     }
