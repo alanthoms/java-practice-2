@@ -34,6 +34,16 @@ public class HappyLlamas {
      * @return boolean indicating if the llama's are happy
      */
     public static boolean areTheLlamasHappy(boolean ultraBouncy, int trampolines) {
+
+        if (ultraBouncy == true) {
+            if (trampolines >= 24) {
+                return true;
+            }
+        } else{
+            if (trampolines >= 24 && trampolines <= 42) {
+                return true;
+            }
+        }
         return false;
     }
     
