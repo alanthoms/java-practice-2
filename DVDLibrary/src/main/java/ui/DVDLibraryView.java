@@ -23,6 +23,7 @@ public class DVDLibraryView {
         io.print("5. Edit a DVD");
         io.print("6. Exit");
         io.print("7 Find all movies released in the last N years");
+        io.print("8 Find oldest movie");
 
         return io.readInt("Please select from the choices above." ,1,9);
 

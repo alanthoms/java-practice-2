@@ -52,6 +52,9 @@ public class DVDLibraryController {
                     case 7:
                         getDvdByYear();
                         break;
+                    case 8:
+                        getOldestDvd();
+                        break;
                     default:
                         unknownCommand();
                 }
@@ -111,6 +114,12 @@ public class DVDLibraryController {
         List<DVD> dvdsByYear = dao.getDvdsByYear(yearChoice);
         view.displayDvdList(dvdsByYear);
 
+    }
+
+    private void getOldestDvd() throws DVDLibraryDaoException {
+        view.displayDisplayAllBanner();
+        DVD oldestDvd = dao.getOldestDvd();
+        view.displayDvd(oldestDvd);
     }
 
     private void unknownCommand() {

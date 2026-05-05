@@ -74,7 +74,15 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         return dvds.values().stream()
                 .filter(p -> p.getReleaseDate().getYear() >= cutoffYear)
                 .collect(Collectors.toList());
-            }
+    }
+
+    @Override
+    public DVD getOldestDvd() throws DVDLibraryDaoException {
+        loadRoster();
+        return dvds.values().stream()
+                .min(Comparator.comparing(DVD::getReleaseDate))
+                .orElse(null);
+    }
 
     private DVD unmarshallDvd(String dvdAsText){
         String[] dvdTokens = dvdAsText.split(DELIMITER);

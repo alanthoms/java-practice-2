@@ -19,5 +19,5 @@ public interface DVDLibraryDao {
 
    // List<DVD> getDvdsByDirectorName(String directorName) throws DVDLibraryDaoException;
 
-    //DVD getOldestDvd() throws DVDLibraryDaoException;
+    DVD getOldestDvd() throws DVDLibraryDaoException;
 }
