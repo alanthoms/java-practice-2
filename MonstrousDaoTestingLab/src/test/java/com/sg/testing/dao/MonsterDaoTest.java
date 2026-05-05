@@ -5,6 +5,8 @@ import com.sg.testing.model.Monster;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MonsterDaoTest {
@@ -38,7 +40,20 @@ class MonsterDaoTest {
         Monster removed = dao.removeMonster(1);
         assertEquals(m1, removed);
         assertNull(dao.getMonster(1));
-        
+
+    }
+
+
+    @Test
+    public void testGetAllMonsters() {
+        Monster m1 = new Monster("Dracula", null, 0, "Blood");
+        Monster m2 = new Monster("Zombie", null, 0, "Brains");
+        dao.addMonster(1, m1);
+        dao.addMonster(2, m2);
+        List<Monster> monsters = dao.getAllMonsters();
+        assertEquals(2, monsters.size());
+        assertEquals(m1, monsters.get(0));
+        assertEquals(m2, monsters.get(1));
     }
 
 
