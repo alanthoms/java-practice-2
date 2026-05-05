@@ -68,6 +68,16 @@ class MonsterDaoTest {
         assertEquals(0, dao.getAllMonsters().size());
     }
 
+    @Test
+    public void testGetDoesNotRemoveMonsterById() {
+        Monster m = new Monster("Phantom", null, 0, "Fear");
+        dao.addMonster(1, m);
+        Monster firstCall = dao.getMonster(1);
+        Monster secondCall = dao.getMonster(1);
+        assertEquals(m, firstCall);
+        assertEquals(m, secondCall);
+    }
+
 
 
 
