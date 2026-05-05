@@ -79,6 +79,29 @@ class MonsterDaoTest {
     }
 
 
+    @Test
+    public void testGetMonsterDoesNotDeleteData() {
+        Monster m = new Monster("Dragon", null, 0, "Gold");
+        dao.addMonster(1, m);
+
+        Monster first = dao.getMonster(1);
+        Monster second = dao.getMonster(1);
+
+        assertEquals(m, first);
+        assertEquals(m, second);
+    }
+
+    @Test
+    public void testGetAllMonstersNoDuplicates() {
+        dao.addMonster(1, new Monster("A", null, 0, "Food"));
+        dao.addMonster(2, new Monster("B", null, 0, "Food"));
+
+        List<Monster> all = dao.getAllMonsters();
+
+        assertEquals(2, all.size());
+    }
+
+
 
 
 
