@@ -79,4 +79,9 @@ public class Student {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "firstName=" + firstName + ", lastName=" + lastName + ", studentId=" + studentId + ", cohort=" + cohort + '}';
+    }
 }
