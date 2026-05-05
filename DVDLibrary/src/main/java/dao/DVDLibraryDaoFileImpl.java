@@ -6,6 +6,9 @@ import dto.DVD;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.Arrays.stream;
 
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
@@ -61,6 +64,15 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         writeRoster();
         return removedDvd;
     }
+
+    @Override
+    public List<DVD> getDvdsByYear(int year)
+            throws DVDLibraryDaoException {
+        loadRoster();
+        return dvds.values().stream()
+                .filter(p -> p.getReleaseDate().getYear() == year)
+                .collect(Collectors.toList());
+            }
 
     private DVD unmarshallDvd(String dvdAsText){
         String[] dvdTokens = dvdAsText.split(DELIMITER);
