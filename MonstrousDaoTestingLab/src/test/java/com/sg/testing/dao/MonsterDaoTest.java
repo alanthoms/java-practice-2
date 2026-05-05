@@ -56,6 +56,20 @@ class MonsterDaoTest {
         assertEquals(m2, monsters.get(1));
     }
 
+    @Test
+    public void testUpdateDoesNotAddNewMonster() {
+
+        Monster m = new Monster("Phantom", null, 0, "Fear");
+
+        dao.updateMonster(1, m);
+
+        assertNull(dao.getMonster(1));
+
+        assertEquals(0, dao.getAllMonsters().size());
+    }
+
+
+
 
 
 
