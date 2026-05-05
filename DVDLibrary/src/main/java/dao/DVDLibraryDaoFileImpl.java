@@ -9,8 +9,16 @@ import java.util.*;
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     private Map<String, DVD> dvds = new HashMap<>();
-    public static final String ROSTER_FILE = "roster.txt";
+    private final String ROSTER_FILE;
     public static final String DELIMITER = "::";
+
+    public DVDLibraryDaoFileImpl(){
+        ROSTER_FILE = "roster.txt";
+    }
+
+    public DVDLibraryDaoFileImpl(String rosterTextFile){
+        ROSTER_FILE = rosterTextFile;
+    }
 
     @Override
     public DVD addDvd(String dvdTitle, DVD dvd)

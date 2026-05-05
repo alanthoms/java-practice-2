@@ -1,5 +1,7 @@
 package dto;
 
+import java.util.Objects;
+
 public class DVD {
     private String title;
     private String releaseDate;
@@ -61,6 +63,38 @@ public class DVD {
         this.title = title;
     }
 
+
     // Getters and setters
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, releaseDate, mpaaRating, directorName, studio, userNote);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        DVD other = (DVD) obj;
+
+        return Objects.equals(title, other.title) &&
+                Objects.equals(releaseDate, other.releaseDate) &&
+                Objects.equals(mpaaRating, other.mpaaRating) &&
+                Objects.equals(directorName, other.directorName) &&
+                Objects.equals(studio, other.studio) &&
+                Objects.equals(userNote, other.userNote);
+    }
+
+    @Override
+    public String toString() {
+        return "DVD{" +
+                "title='" + title + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
+                ", mpaaRating='" + mpaaRating + '\'' +
+                ", directorName='" + directorName + '\'' +
+                ", studio='" + studio + '\'' +
+                ", userNote='" + userNote + '\'' +
+                '}';
+    }
 
 }
