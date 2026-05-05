@@ -2,6 +2,7 @@ package ui;
 
 import dto.DVD;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class DVDLibraryView {
@@ -29,7 +30,8 @@ public class DVDLibraryView {
 
     public DVD getNewDvdInfo() {
         String title = io.readString("Please enter title");
-        String releaseDate = io.readString("Please enter release date");
+        String releaseDateInput = io.readString("Please enter release date");
+        LocalDate releaseDate = LocalDate.parse(releaseDateInput);
         String mpaaRating = io.readString("Please enter mpaa rating");
         String directorName = io.readString("Please enter director name");
         String studio =  io.readString("Please enter studio name");
@@ -87,7 +89,7 @@ public class DVDLibraryView {
     public void displayDvd (DVD dvd) {
         if (dvd != null) {
             io.print(dvd.getTitle());
-            io.print(dvd.getReleaseDate());
+            io.print(dvd.getReleaseDate().toString());
             io.print(dvd.getMpaaRating());
             io.print(dvd.getDirectorName());
             io.print(dvd.getStudio());

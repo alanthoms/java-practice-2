@@ -4,6 +4,7 @@ package dao;
 import dto.DVD;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.*;
 
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
@@ -68,7 +69,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
         DVD dvdFromFile = new DVD(dvdTitle);
 
-        dvdFromFile.setReleaseDate(dvdTokens[1]);
+        dvdFromFile.setReleaseDate(LocalDate.parse(dvdTokens[1]));
 
         dvdFromFile.setMpaaRating(dvdTokens[2]);
 

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileWriter;
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,7 +35,7 @@ class DVDLibraryDaoFileImplTest {
         // Arrange
         String title = "Inception";
         DVD dvd = new DVD(title);
-        dvd.setReleaseDate("2010");
+        dvd.setReleaseDate(LocalDate.parse("2020-04-20"));
         dvd.setMpaaRating("PG-13");
         dvd.setDirectorName("Christopher Nolan");
         dvd.setStudio("Warner Bros");
@@ -76,7 +77,7 @@ class DVDLibraryDaoFileImplTest {
     public void testAddGetAllDVDs() throws Exception {
         // Arrange - first DVD
         DVD firstDVD = new DVD("Inception");
-        firstDVD.setReleaseDate("2010");
+        firstDVD.setReleaseDate(LocalDate.parse("2020-04-20"));
         firstDVD.setMpaaRating("PG-13");
         firstDVD.setDirectorName("Christopher Nolan");
         firstDVD.setStudio("Warner Bros");
@@ -84,7 +85,7 @@ class DVDLibraryDaoFileImplTest {
 
         // Arrange - second DVD
         DVD secondDVD = new DVD("Interstellar");
-        secondDVD.setReleaseDate("2014");
+        secondDVD.setReleaseDate(LocalDate.parse("2020-04-20"));
         secondDVD.setMpaaRating("PG-13");
         secondDVD.setDirectorName("Christopher Nolan");
         secondDVD.setStudio("Paramount");
@@ -110,7 +111,7 @@ class DVDLibraryDaoFileImplTest {
     public void testRemoveDVD() throws Exception {
         // Arrange - first DVD
         DVD firstDVD = new DVD("Inception");
-        firstDVD.setReleaseDate("2010");
+        firstDVD.setReleaseDate(LocalDate.parse("2020-04-20"));
         firstDVD.setMpaaRating("PG-13");
         firstDVD.setDirectorName("Christopher Nolan");
         firstDVD.setStudio("Warner Bros");
@@ -118,7 +119,7 @@ class DVDLibraryDaoFileImplTest {
 
         // Arrange - second DVD
         DVD secondDVD = new DVD("Interstellar");
-        secondDVD.setReleaseDate("2014");
+        secondDVD.setReleaseDate(LocalDate.parse("2020-04-20"));
         secondDVD.setMpaaRating("PG-13");
         secondDVD.setDirectorName("Christopher Nolan");
         secondDVD.setStudio("Paramount");
