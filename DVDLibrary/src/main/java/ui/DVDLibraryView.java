@@ -22,8 +22,9 @@ public class DVDLibraryView {
         io.print("4. Remove a DVD");
         io.print("5. Edit a DVD");
         io.print("6. Exit");
+        io.print("7 Find all movies released in the last N years");
 
-        return io.readInt("Please select from the choices above." ,1,6);
+        return io.readInt("Please select from the choices above." ,1,9);
 
 
     }
@@ -45,6 +46,10 @@ public class DVDLibraryView {
         currentDVD.setStudio(studio);
         currentDVD.setUserNote(userNote);
         return currentDVD;
+    }
+
+    public int getYearChoice(){
+        return io.readInt("Enter your year");
     }
 
     public void displayAddDVDBanner() {

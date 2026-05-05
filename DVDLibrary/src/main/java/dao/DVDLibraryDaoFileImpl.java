@@ -69,8 +69,10 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
     public List<DVD> getDvdsByYear(int year)
             throws DVDLibraryDaoException {
         loadRoster();
+        int currentYear = LocalDate.now().getYear();
+        int cutoffYear = currentYear - year;
         return dvds.values().stream()
-                .filter(p -> p.getReleaseDate().getYear() == year)
+                .filter(p -> p.getReleaseDate().getYear() >= cutoffYear)
                 .collect(Collectors.toList());
             }
 

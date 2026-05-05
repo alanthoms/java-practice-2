@@ -1,5 +1,2 @@
-p::p::p::p::p::p
-4::4::4::::4::4
-s::s::ss::s::s::s
-4::4::4::::4::4
-6::6::::6::6::6
+Interstellar::2020-04-20::PG-13::Christopher Nolan::Paramount::Amazing visuals
+Inception::2020-04-20::PG-13::Christopher Nolan::Warner Bros::Great film

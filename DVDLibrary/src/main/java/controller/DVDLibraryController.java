@@ -49,6 +49,9 @@ public class DVDLibraryController {
                     case 6:
                         keepGoing = false;
                         break;
+                    case 7:
+                        getDvdByYear();
+                        break;
                     default:
                         unknownCommand();
                 }
@@ -100,6 +103,14 @@ public class DVDLibraryController {
         String dvdChoice = view.getDVDChoice();
         DVD newChoice = view.getNewDvdInfo();
         DVD editedDvd = dao.editDvd(dvdChoice, newChoice );
+    }
+
+    private void getDvdByYear() throws DVDLibraryDaoException {
+        view.displayDisplayAllBanner();
+        int yearChoice = view.getYearChoice();
+        List<DVD> dvdsByYear = dao.getDvdsByYear(yearChoice);
+        view.displayDvdList(dvdsByYear);
+
     }
 
     private void unknownCommand() {
