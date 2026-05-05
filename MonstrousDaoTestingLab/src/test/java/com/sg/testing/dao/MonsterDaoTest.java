@@ -31,7 +31,17 @@ class MonsterDaoTest {
         assertEquals(m2, fromDao2);
     }
 
-    
+    @Test
+    public void testRemoveMonsterById() {
+        Monster m1 = new Monster("Dracula", null, 0, "Blood");
+        dao.addMonster(1, m1);
+        Monster removed = dao.removeMonster(1);
+        assertEquals(m1, removed);
+        assertNull(dao.getMonster(1));
+        
+    }
+
+
 
 
 }
